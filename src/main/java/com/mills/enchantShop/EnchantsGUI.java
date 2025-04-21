@@ -19,7 +19,7 @@ public class EnchantsGUI implements Listener {
     public static Inventory enchantsGUI(Player player) {
         getItem(player);
         if (itemName == null) {
-            player.sendMessage(ChatColor.RED + "Item not recognized!");
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e&lEnchants &8» &7You must be holding an enchantable item!"));
             return null;
         }
 
