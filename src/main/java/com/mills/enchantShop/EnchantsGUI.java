@@ -113,10 +113,15 @@ public class EnchantsGUI implements Listener {
 
             if (cost < 0) return;
 
-            if (player.getLevel() >= cost) {
+            int playerXP = Utils.getTotalExperience(player);
+
+            if (playerXP >= cost) {
                 ItemStack itemInHand = player.getInventory().getItemInMainHand();
                 itemInHand.addEnchantment(enchantment, nextLevel);
-                player.setLevel(player.getLevel() - cost);
+
+                int newLevel = Math.max(0, player.getLevel() - cost);
+                player.setLevel(newLevel);
+
                 enchantsGUI(player);
                 player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_YES, 1.0f, 1.0f);
             } else {
