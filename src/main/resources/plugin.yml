@@ -2,3 +2,6 @@ name: EnchantShop
 version: '1.0'
 main: com.mills.enchantShop.Main
 api-version: '1.21'
+author: mills
+commands:
+  enchants:
