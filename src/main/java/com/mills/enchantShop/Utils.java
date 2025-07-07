@@ -20,10 +20,9 @@ public class Utils {
 
     public static int getTotalExperience(Player player) {
         int level = player.getLevel();
-        float progress = player.getExp(); // Between 0.0 and 1.0
+        float progress = player.getExp();
         int xp = 0;
 
-        // Add XP for all completed levels
         for (int i = 0; i < level; i++) {
             if (i >= 30) {
                 xp += 112 + (i - 30) * 9;
@@ -34,7 +33,6 @@ public class Utils {
             }
         }
 
-        // Add partial progress in current level
         int expToNextLevel;
         if (level >= 30) {
             expToNextLevel = 112 + (level - 30) * 9;

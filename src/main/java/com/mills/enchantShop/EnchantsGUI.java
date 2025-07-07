@@ -119,8 +119,8 @@ public class EnchantsGUI implements Listener {
                 ItemStack itemInHand = player.getInventory().getItemInMainHand();
                 itemInHand.addEnchantment(enchantment, nextLevel);
 
-                int newLevel = Math.max(0, player.getLevel() - cost);
-                player.setLevel(newLevel);
+                int newXP = Math.max(0, playerXP - cost);
+                player.setExp(newXP);
 
                 enchantsGUI(player);
                 player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_YES, 1.0f, 1.0f);
